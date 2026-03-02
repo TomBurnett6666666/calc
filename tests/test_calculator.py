@@ -4,12 +4,10 @@ Unit test for Calculator class
 
 import sys
 import os
+from calculator import Calculator
 
 # absolute path setup
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
-
-from calculator import Calculator
-
 
 def test_addition():
     """Test addition operation"""

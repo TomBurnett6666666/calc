@@ -35,6 +35,12 @@ class Calculator:
         result = a / b
         self.history.append(f"{a} ÷ {b} = {result}")
         return result
+    
+    def power(self, base, exponent):
+        """Raises base to the power of exponent"""
+        result = base ** exponent
+        self.history.append(f"{base} ^ {exponent} = {result}")
+        return result
 
     def get_history(self):
         """Return calculation history"""
@@ -50,7 +56,7 @@ def main():
     calc = Calculator()  # create an instance of the calculator object
 
     print("=== Python Calculator ===")
-    print("Available operations: add, subtract, multiply, divide")
+    print("Available operations: add, subtract, multiply, divide, power")
     print("Type 'history' to see past calculations")
     print("Type 'quit' to exit\n")
 
@@ -73,7 +79,7 @@ def main():
                 print("---- No history yet! ----")
             continue
 
-        if operation not in ['add', 'subtract', 'multiply', 'divide']:
+        if operation not in ['add', 'subtract', 'multiply', 'divide', 'power']:
             print("---Invalid operation. Please enter a valid operation and try again!---")
             continue
 
@@ -90,7 +96,8 @@ def main():
                 result = calc.multiply(num1, num2)
             elif operation == 'divide':
                 result = calc.divide(num1, num2)
-
+            elif operation == 'power':
+                result = calc.power(num1, num2)
             print(f"Result: {result}\n")
 
         except ValueError as e:
@@ -101,4 +108,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    

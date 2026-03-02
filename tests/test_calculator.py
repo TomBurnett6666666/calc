@@ -51,6 +51,14 @@ def test_division():
 
     print("✓ Division tests passed")
 
+    def test_power():
+        """Test power operation"""
+        calc = Calculator()
+        assert calc.power(2, 3) == 8
+        assert calc.power(5, 0) == 1
+        assert calc.power(9, 0.5) == 3
+        print("✓ Power tests passed")
+
 
 def test_history():
     """Test history functionality"""
@@ -71,7 +79,7 @@ if __name__ == "__main__":
     test_subtraction()
     test_multiplication()
     test_division()
+    test_power()
     test_history()
 
     print("\n✓ All tests passed successfully!")
-    
